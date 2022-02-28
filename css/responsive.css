@@ -1,0 +1,108 @@
+/* form login */
+.Form__login {
+  top: 20%;
+  height: 400px;
+  width: 380px;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  margin: 0 35%;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  transition: ease-out 0.5s;
+}
+.fill__login {
+  height: 100%;
+  width: 100%;
+  position: absolute !important;
+  background-color: rgba(247, 211, 112, 0.281);
+  opacity: 0;
+  visibility: hidden;
+  transition: ease-out 0.5s;
+}
+.Form__logup {
+  top: 20%;
+  height: 480px;
+  width: 380px;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  margin: 0 35%;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  transition: ease-out 0.5s;
+}
+.Formchange {
+  opacity: 1 !important;
+  visibility: visible;
+}
+.Formremove {
+  display: none !important;
+}
+.Form__login h3,
+.Form__logup h3 {
+  height: 35px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--color-red);
+}
+.Form__login div,
+.Form__logup div {
+  height: 80px;
+  width: 100%;
+  font-size: 1rem;
+}
+.Form__login p,
+.Form__logup p {
+  height: 30px;
+  width: 100%;
+  font-size: 1rem;
+}
+.Form__login input,
+.Form__logup input {
+  height: 35px;
+  width: 100%;
+  font-size: 1rem;
+  border-radius: 2px;
+  border: 1px solid var(--color-black);
+  outline: none;
+  padding: 8px;
+}
+.Form__login button,
+.Form__logup button {
+  height: 35px;
+  border-radius: 3px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  background-color: rgb(173, 247, 224);
+  cursor: pointer;
+  color: var(--color-black);
+}
+.Form__login button:hover,
+.Form__logup button:hover {
+  background-color: var(--color-red);
+}
+#checkbox {
+  height: 15px;
+  width: 15px;
+  margin-right: 3px;
+}
+#checkbox__in {
+  height: 15px;
+  width: 15px;
+  margin-right: 3px;
+}
+#policy {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  margin-bottom: 10px;
+}
+#policy p {
+  line-height: 30px;
+}

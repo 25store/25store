@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shop - demo</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+</head>
+<body >
+<div   class="all">
+        <!-- header -->
+    <div id="fill__login" onclick="userClickremove('form-in','fill__login', 'Formchange', 'form-up')" class="fill__login"></div>
+        <div class="header">
+            <!--top - header--->
+            <div class="header__top">
+                <div class="header__top--right">
+                    <div style="display: flex;"><span style="width: 25px;"><i  class="fas fa-map-marker-alt"></i>  </span><span>Tân uyên - Lai Châu - Việt Nam</span></div>
+                    <div style="display: flex;"><span style="width: 30px;"><i  class="fas fa-phone"></i></span><span> 0789009862</span></div>
+                </div>
+                <div class="header__top--left">
+                    <a style="margin-left: 45%;" href=""><i class="fab fa-facebook"></i></a>
+                    <a href=""><i class="fab fa-instagram"></i></a>
+                    <a href=""><i class="fab fa-twitter"></i></a>
+                    <nav  onclick="userClickadd('form-up', 'fill__login', 'Formchange')" style="margin-left: 20px; line-height: 40px; cursor: pointer; width: 240px;" class="logup__header">Đăng ký</nav>
+                    <nav id="form__normal" onclick="userClickadd('form-in', 'fill__login', 'Formchange')" style="line-height: 40px; cursor: pointer; width: 240px;" class="login__header" >Đăng nhập</nav>
+                </div>
+            </div>
+            <!-- main-header -->
+            <div  class="main__header">
+                <!-- menu -->
+                <div class="menu"><i id="menu" onclick="menu(list__chose)" class="fas fa-bars"></i></div>
+                <!-- logo -->
+                <div class="logo">
+                    <a href="#"><img onClick="window.location.reload();" src="img/logo.png" alt=""></a>
+                </div>
+                <!-- search -->
+                <div class="search">
+                    <input type="text" placeholder="Tìm kiếm sản phẩm">
+                    <i class="fas fa-search"></i>
+                </div>
+                <!-- cart--heart -->
+                <div class="cart__heart">
+                    <a class="heart" style=" margin-left: 50%;" href=""><i  class="far fa-heart"></i></a>
+                    <a class="user" href=""><i class="fas fa-user"></i></a>
+                    <a class="cart" href="">
+                        <i class="fas fa-shopping-cart">
+                            <!-- cart hover -->
+                            <div class="arrow__up"></div>
+                            <div class="cross"></div>
+                            <div id="cart__hover" class="cart__hover">
+                              
+                            </div>
+                        </i>
+                    </a>
+                </div>
+            </div>
+            <!-- botton--header -->
+            <div id="list__chose" class="header__botton">
+                <i onclick="removemenu()" style="display: none;" class="far fa-times-circle"></i>
+
+                <ul>
+                    <li style="display: none;">
+                        <i class="fas fa-search" 
+                            style="width: 35px; position: absolute; left: -210px; color: var(--color-black); font-size: 2rem; background-color: var(--color-while);">
+                        </i>
+                        <input placeholder="nhập sản phẩm" style=" border: 1px solid var(--color-black); height: 30px; width: 130px;" type="text">
+                    </li>
+                    <li onClick="window.location.reload();" id="border__botton" class="border__botton">TRANG CHỦ</li>
+                    <li id="jsIntrodure" onclick="introdure()">GIỚI THIỆU</li>
+                    <li class="sex">NAM</li>
+                    <li class="sex">NỮ</li>
+                    <li>BLOGS</li>
+                    <li class="contact">LIÊN HỆ</li>
+                    <li style="display: none;"><nav  onclick="userClickadd('form-up', 'fill__login', 'Formchange')" style="margin: 0px 0px; line-height: 40px; cursor: pointer; width: 240px;" class="logup__header">ĐĂNG KÝ</nav></li>
+                    <li style="display: none;"> <nav id="form__normal" onclick="userClickadd('form-in', 'fill__login', 'Formchange')" style="margin:0px 0px; line-height: 40px; cursor: pointer; width: 240px;" class="login__header" >ĐĂNG NHẬP</nav></li>
+                </ul>
+                
+            </div>
+        </div>
+        <!-- slider  -->
+        <div class="slider" onclick="removemenu()">
+            <img onclick="SlideChange()" id="image"  class="image1" src="img/poster-slide.jpg" alt="">
+            <div class="content__slide">
+                <h2>25 STORE</h2>
+                <h3>GiÀY THỂ THAO</h3>
+                <P>
+                    Cùng với sự phát triển không ngừng của thời trang thế giới, rất ngiều thương hiệu đã cho ra dời những mẫu giày
+                    đa dạng về phong cách, kiểu dáng, màu sắc kích cỡ...
+                </P>
+                <a href=""><button>Xem sản phẩm</button></a>
+            </div>
+        </div>
+        <!-- form -->
+        
+        <form style="transition: 0.5s;" id="form-up" class="Form__logup" action="#">
+            <h3>Đăng ký</h3>
+            <div>
+                <p>Tên tài khoản:</p>
+                <input type="text" placeholder="Tên tài khoản" >
+            </div>
+            <div>
+                <p>Nhập mật khẩu:</p>
+                <input type="password" placeholder="Nhập mật khẩu" >
+            </div>
+            <div>
+                <p>Nhập lại mật khẩu:</p>
+                <input type="password" placeholder="Nhập lại mật khẩu" >
+            </div>
+            <div id="policy">
+                 <input id="checkbox" type="checkbox">
+                <p>xác nhận với <a href="">điều khoản</a> và <a href="">dịch vụ</a> của chúng tôi</p>   
+            </div>
+            <button id="confirm__up">XÁC NHẬN</button>
+            <button style="background-color: rgb(231, 213, 213)" onclick="userClickremove('form-up','fill__login', 'Formchange')" id="confirm">Hủy bỏ</button>
+
+        </form>
+         <!-- form -->
+         <form id="form-in" class="Form__login" action="#">
+            <h3>Đăng nhập</h3>
+            <div>
+                <p>Tên tài khoản:</p>
+                <input type="text" placeholder="Tên tài khoản" >
+            </div>
+            <div>
+                <p>Nhập mật khẩu:</p>
+                <input type="password" placeholder="Nhập mật khẩu" >
+            </div>
+            <div id="policy">
+                 <input id="checkbox__in" type="checkbox">
+                <p>xác nhận với <a href="">điều khoản</a> và <a href="">dịch vụ</a> của chúng tôi</p>   
+            </div>
+            <button id="confirm__in">XÁC NHẬN</button>
+            <button onclick="userClickremove('form-in','fill__login', 'Formchange')"  style="background-color: rgb(231, 213, 213)" id="confirm__cancel">Hủy bỏ</button>
+
+        </form>
+        <!-- content -->
+        <div class="content">
+            <!-- fill banner -->
+            <div class="fill">
+                <div style="background-image: url(img/fill.jpg);" class="fill__left">
+                    <button>Xem sản phẩm</button>
+                </div>
+                <div  style="background-image: url(img/fill-converse.jpg);" class="fill__right">
+                    <button >Xem sản phẩm</button>
+                </div>
+            </div>
+            <!-- fearture product -->
+            <div class="feature__product">
+                <h2>Sản phẩm nổi bật</h2>
+                <div class="card__product">
+                    <div class="card1__card2">
+                    <!-- card 1 -->
+                    <div class="product">
+                        <!-- header product -->
+                        <i  class="far fa-heart"></i>
+                        <a href="">
+                            <img class="img__product" src="img/jd-co-cao.jpg" alt="">
+                        </a>
+                        <!-- infomational product -->
+                        <div class="infomation__product">
+                            <a href=""><h3 class="name__product">Nike jordan cổ cao</h3></a>
+                            <span><del></del><span class="price__product"> 285,000</span><u>đ</u></span><br>
+                            <button class="addcart">Thêm vào giỏ</button>
+                        </div>
+                    </div>
+                    <!-- card 2 -->
+                    <div class="product">
+                        <!-- header product -->
+                        <i  class="far fa-heart"></i>
+                        <a href="">
+                            <img class="img__product" src="img/sneaker-mlb.jpg" alt="">
+                        </a>
+                        <!-- infomational product -->
+                        <div class="infomation__product">
+                            <a href=""><h3 class="name__product">Sneaker MLB</h3></a>
+                            <span><del></del><span class="price__product"> 280,000</span><u>đ</u></span><br>
+                            <button class="addcart" >Thêm vào giỏ</butto>
+                        </div>
+                    </div>
+                    </div>
+                    <div id="card3__card4" class="card3__card4">
+                        <!-- card 3 -->
+                    <div class="product">
+                        <!-- header product -->
+                        <i  class="far fa-heart"></i>
+                        <a href="">
+                            <img class="img__product" src="img/nike-af1.jpg" alt="">
+                        </a>
+                        <!-- infomational product -->
+                        <div class="infomation__product">
+                            <a href=""><h3 class="name__product">Nike air force 1</h3></a>
+                            <span><del></del><span class="price__product"> 320,000</span><u>đ</u></span><br>
+                            <button class="addcart">Thêm vào giỏ</button>
+                        </div>
+                    </div>
+                    <!-- card 4 -->
+                    <div class="product">
+                        <!-- header product -->
+                        <i  class="far fa-heart"></i>
+                        <a href="">
+                            <img class="img__product" src="img/yz700-static.jpg" alt="">
+                        </a>
+                        <!-- infomational product -->
+                        <div class="infomation__product">
+                            <a href=""><h3 class="name__product">Yeezy static 700</h3></a>
+                            <span><del></del><span class="price__product"> 445,000</span><u>đ</u></span><br>
+                            <button class="addcart">Thêm vào giỏ</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+             <!-- fill banner -->
+             <div class="fill">
+                <div style="background-image: url(img/fill.jpg);" class="fill__left">
+                    <button>Xem sản phẩm</button>
+                </div>
+                <div  style="background-image: url(img/fill-converse.jpg);" class="fill__right">
+                    <button >Xem sản phẩm</button>
+                </div>
+            </div>
+            <!-- main product -->
+            <div class="main__product" style="overflow: hidden;">
+                <div class="list__product">  
+                    <div style="width: 220px;"><h2 onclick="listChange('list1', 'list2', 'list3', 'fornew__product', 'sales__product', 'fortrend__product')" id="list1" class="" style="width: 220px; color: #c89979;">Sản phẩm mới</h2></div>
+                    <div style="width: 280px;"><h2 onclick="listChange('list2', 'list1', 'list3', 'sales__product', 'fornew__product', 'fortrend__product')" id="list2" class="" style="width: 260px; margin-right: 20px;">Sản phẩm bán chạy</h2></div>
+                    <div style="width: 220px;"><h2 onclick="listChange('list3', 'list2', 'list1', 'fortrend__product', 'fornew__product', 'sales__product')" id="list3" class="" >Giày siêu cấp</h2></div>
+                </div>
+            <div id="fornew__product">
+                <div class="card__product">
+                    <div class="card1__card2">
+                        <!-- card 1 -->
+                    <div class="product">
+                        <!-- header product -->
+                        <i  class="far fa-heart"></i>
+                        <a href="">
+                            <img id="a1" class="img__product" src="img/vans-old.jpg" alt="">
+                        </a>
+                        <!-- infomational product -->
+                        <div class="infomation__product">
+                            <a href=""><h3 class="name__product">Vans Old Skool white</h3></a>
+                            <span><del></del><span class="price__product"> 360,000</span><u>đ</u></span><br>
+                            <button class="addcart">Thêm vào giỏ</button>
+                        </div>
+                    </div>
+                    <!-- card 2 -->
+                    <div class="product">
+                        <!-- header product -->
+                        <i  class="far fa-heart"></i>
+                        <a href="">
+                            <img id="a2" class="img__product" src="img/nike-7mau.jpg" alt="">
+                        </a>
+                        <!-- infomational product -->
+                        <div class="infomation__product">
+                            <a href=""><h3 class="name__product">AIRFORCE SHADOW F1</h3></a>
+                            <span><del></del><span class="price__product"> 399,000</span><u>đ</u></span><br>
+                            <button class="addcart" >Thêm vào giỏ</butto>
+                        </div>
+                    </div>
+                    </div>
+                   <div class="card3__card4">
+                        <!-- card 3 -->
+                    <div class="product">
+                        <!-- header product -->
+                        <i  class="far fa-heart"></i>
+                        <a href="">
+                            <img id="a3" class="img__product" src="img/jordan-dior.jpg" alt="">
+                        </a>
+                        <!-- infomational product -->
+                        <div class="infomation__product">
+                            <a href=""><h3 class="name__product">NIKE JORDAN DIOR</h3></a>
+                            <span><del></del><span class="price__product"> 354,000</span><u>đ</u></span><br>
+                            <button class="addcart">Thêm vào giỏ</button>
+                        </div>
+                    </div>
+                    <!-- card 4 -->
+                    <div class="product">
+                        <!-- header product -->
+                        <i  class="far fa-heart"></i>
+                        <a href="">
+                            <img id="a4" class="img__product" src="img/nike-v70.jpg" alt="">
+                        </a>
+                        <!-- infomational product -->
+                        <div class="infomation__product">
+                            <a href=""><h3 class="name__product">nike V70</h3></a>
+                            <span><del></del><span class="price__product"> 279,000</span><u>đ</u></span><br>
+                            <button class="addcart">Thêm vào giỏ</button>
+                        </div>
+                    </div>
+                   </div>
+                </div>
+                <div class="card__product">
+                    <div class="card1__card2">
+                        <!-- card 1 -->
+                    <div class="product">
+                        <!-- header product -->
+                        <i  class="far fa-heart"></i>
+                        <a href="">
+                            <img id="a1" class="img__product" src="img/adidas-2116.jpg" alt="">
+                        </a>
+                        <!-- infomational product -->
+                        <div class="infomation__product">
+                            <a href=""><h3 class="name__product">Adidas 2116</h3></a>
+                            <span><del></del><span class="price__product"> 380,000</span><u>đ</u></span><br>
+                            <button class="addcart">Thêm vào giỏ</button>
+                        </div>
+                    </div>
+                    <!-- card 2 -->
+                    <div class="product">
+                        <!-- header product -->
+                        <i  class="far fa-heart"></i>
+                        <a href="">
+                            <img id="a2" class="img__product" src="img/nike-jordan1.jpg" alt="">
+                        </a>
+                        <!-- infomational product -->
+                        <div class="infomation__product">
+                            <a href=""><h3 class="name__product">jordan 1 low Gs paint drip</h3></a>
+                            <span><del></del><span class="price__product"> 360,000</span><u>đ</u></span><br>
+                            <button class="addcart" >Thêm vào giỏ</butto>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="card3__card4">
+                        <!-- card 3 -->
+                    <div class="product">
+                        <!-- header product -->
+                        <i  class="far fa-heart"></i>
+                        <a href="">
+                            <img id="a3" class="img__product" src="img/vans-old-black.jpg" alt="">
+                        </a>
+                        <!-- infomational product -->
+                        <div class="infomation__product">
+                            <a href=""><h3 class="name__product">vans old skool black</h3></a>
+                            <span><del></del><span class="price__product"> 280,000</span><u>đ</u></span><br>
+                            <button class="addcart">Thêm vào giỏ</button>
+                        </div>
+                    </div>
+                    <!-- card 4 -->
+                    <div class="product">
+                        <!-- header product -->
+                        <i  class="far fa-heart"></i>
+                        <a href="">
+                            <img id="a4" class="img__product" src="img/balenciaga-trips.jpg" alt="">
+                        </a>
+                        <!-- infomational product -->
+                        <div class="infomation__product">
+                            <a href=""><h3 class="name__product">Balenciaga triple S</h3></a>
+                            <span><del></del><span class="price__product"> 480,000</span><u>đ</u></span><br>
+                            <button class="addcart">Thêm vào giỏ</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <!-- san pham bans chay -->
+            <div id="sales__product" style="margin-bottom: -30000px;">
+                <div class="card__product">
+                    <div class="card1__card2">
+                        <!-- card 1 -->
+                    <div class="product">
+                        <!-- header product -->
+                        <i  class="far fa-heart"></i>
+                        <a href="">
+                            <img id="a1" class="img__product" src="img/adidas-superstar.jpg" alt="">
+                        </a>
+                        <!-- infomational product -->
+                        <div class="infomation__product">
+                            <a href=""><h3 class="name__product">Adidas superstar</h3></a>
+                            <span><del></del><span class="price__product"> 340,000</span><u>đ</u></span><br>
+                            <button class="addcart" >Thêm vào giỏ</butto>
+                        </div>
+                    </div>
+                    <!-- card 2 -->
+                    <div class="product">
+                        <!-- header product -->
+                        <i  class="far fa-heart"></i>
+                        <a href="">
+                            <img id="a2" class="img__product" src="img/nike-joyride.jpg" alt="">
+                        </a>
+                        <!-- infomational product -->
+                        <div class="infomation__product">
+                            <a href=""><h3 class="name__product">Nike Joyride Run Flyknit</h3></a>
+                            <span><del></del><span class="price__product"> 760,000</span><u>đ</u></span><br>
+                            <button class="addcart" >Thêm vào giỏ</butto>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="card3__card4">
+                        <!-- card 3 -->
+                    <div class="product">
+                        <!-- header product -->
+                        <i  class="far fa-heart"></i>
+                        <a href="">
+                            <img id="a3" class="img__product" src="img/converse-1970s.jpeg" alt="">
+                        </a>
+                        <!-- infomational product -->
+                        <div class="infomation__product">
+                            <a href=""><h3 class="name__product">Converse 1970s</h3></a>
+                            <span><del></del><span class="price__product"> 330,000</span><u>đ</u></span><br>
+                            <button class="addcart">Thêm vào giỏ</button>
+                        </div>
+                    </div>
+                    <!-- card 4 -->
+                    <div class="product">
+                        <!-- header product -->
+                        <i  class="far fa-heart"></i>
+                        <a href="">
+                            <img id="a4" class="img__product" src="img/sneaker-mlb-xanh.jpg" alt="">
+                        </a>
+                        <!-- infomational product -->
+                        <div class="infomation__product">
+                            <a href=""><h3 class="name__product">MLB Chunky Sneaker</h3></a>
+                            <span><del></del><span class="price__product"> 320,000</span><u>đ</u></span><br>
+                            <button class="addcart">Thêm vào giỏ</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="card__product">
+                    <div class="card1__card2">
+                        <!-- card 1 -->
+                    <div class="product">
+                        <!-- header product -->
+                        <i  class="far fa-heart"></i>
+                        <a href="">
+                            <img id="a1" class="img__product" src="img/Nike-zoomX-N893.jpg" alt="">
+                        </a>
+                        <!-- infomational product -->
+                        <div class="infomation__product">
+                            <a href=""><h3 class="name__product">Nike zoom X N893</h3></a>
+                            <span><del></del><span class="price__product"> 360,000</span><u>đ</u></span><br>
+                            <button class="addcart">Thêm vào giỏ</button>
+                        </div>
+                    </div>
+                    <!-- card 2 -->
+                    <div class="product">
+                        <!-- header product -->
+                        <i  class="far fa-heart"></i>
+                        <a href="">
+                            <img id="a2" class="img__product" src="img/mc-queen.jpg" alt="">
+                        </a>
+                        <!-- infomational product -->
+                        <div class="infomation__product">
+                            <a href=""><h3 class="name__product">Alexander mcqueen</h3></a>
+                            <span><del></del><span class="price__product"> 420,000</span><u>đ</u></span><br>
+                            <button class="addcart" >Thêm vào giỏ</butto>
+                        </div>
+                    </div>
+                    </div>
+                   <div class="card3__card4">
+                        <!-- card 3 -->
+                    <div class="product">
+                        <!-- header product -->
+                        <i  class="far fa-heart"></i>
+                        <a href="">
+                            <img id="a3" class="img__product" src="img/bn0112.jpg" alt="">
+                        </a>
+                        <!-- infomational product -->
+                        <div class="infomation__product">
+                            <a href=""><h3 class="name__product">SNEAKER NAM</h3></a>
+                            <span><del></del><span class="price__product"> 513,000</span><u>đ</u></span><br>
+                            <button class="addcart">Thêm vào giỏ</button>
+                        </div>
+                    </div>
+                    <!-- card 4 -->
+                    <div class="product">
+                        <!-- header product -->
+                        <i  class="far fa-heart"></i>
+                        <a href="">
+                            <img id="a4" class="img__product" src="img/nike-zoom-t60.jpg" alt="">
+                        </a>
+                        <!-- infomational product -->
+                        <div class="infomation__product">
+                            <a href=""><h3 class="name__product">Nike Zoom T60</h3></a>
+                            <span><del></del><span class="price__product">420,000</span><u>đ</u></span><br>
+                            <button class="addcart">Thêm vào giỏ</button>
+                        </div>
+                    </div>
+                   </div>
+                </div>
+            </div>
+            <!-- san pham pho bien -->
+            <div id="fortrend__product" style="margin-bottom: -1000px;">
+                <div class="card__product">
+                    <div class="card1__card2">
+                        <!-- card 1 -->
+                    <div class="product">
+                        <!-- header product -->
+                        <i  class="far fa-heart"></i>
+                        <a href="">
+                            <img id="a1" class="img__product" src="img/yz350-v2-yecheil.jpg" alt="">
+                        </a>
+                        <!-- infomational product -->
+                        <div class="infomation__product">
+                            <a href=""><h3 class="name__product">Giày Yeezy 350 v2 Yecheil</h3></a>
+                            <span><del></del><span class="price__product"> 2,820,000</span><u>đ</u></span><br>
+                            <button class="addcart">Thêm vào giỏ</button>
+                        </div>
+                    </div>
+                    <!-- card 2 -->
+                    <div class="product">
+                        <!-- header product -->
+                        <i  class="far fa-heart"></i>
+                        <a href="">
+                            <img id="a2" class="img__product" src="img/jordan-panda.jpg" alt="">
+                        </a>
+                        <!-- infomational product -->
+                        <div class="infomation__product">
+                            <a href=""><h3 class="name__product">Nike Air Jordan1 High Panda </h3></a>
+                            <span><del></del><span class="price__product"> 3,800,000</span><u>đ</u></span><br>
+                            <button class="addcart" >Thêm vào giỏ</butto>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="card3__card4">
+                        <!-- card 3 -->
+                    <div class="product">
+                        <!-- header product -->
+                        <i  class="far fa-heart"></i>
+                        <a href="">
+                            <img id="a3" class="img__product" src="img/nike-sacai.jpeg" alt="">
+                        </a>
+                        <!-- infomational product -->
+                        <div class="infomation__product">
+                            <a href=""><h3 class="name__product">Nike sacai</h3></a>
+                            <span><del></del><span class="price__product"> 2,300,000</span><u>đ</u></span><br>
+                            <button class="addcart">Thêm vào giỏ</button>
+                        </div>
+                    </div>
+                    <!-- card 4 -->
+                    <div class="product">
+                        <!-- header product -->
+                        <i  class="far fa-heart"></i>
+                        <a href="">
+                            <img id="a4" class="img__product" src="img/balenciaga-trips-sieucap.jpg" alt="">
+                        </a>
+                        <!-- infomational product -->
+                        <div class="infomation__product">
+                            <a href=""><h3 class="name__product">Balenciaga TripleS</h3></a>
+                            <span><del></del><span class="price__product"> 3,500,000</span><u>đ</u></span><br>
+                            <button class="addcart">Thêm vào giỏ</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="card__product">
+                    <div class="card1__card2">
+                        <!-- card 1 -->
+                    <div class="product">
+                        <!-- header product -->
+                        <i  class="far fa-heart"></i>
+                        <a href="">
+                            <img id="a1" class="img__product" src="img/balenciaga-track-sieucap.jpg" alt="">
+                        </a>
+                        <!-- infomational product -->
+                        <div class="infomation__product">
+                            <a href=""><h3 class="name__product">Balenciaga Track</h3></a>
+                            <span><del></del><span class="price__product"> 3,600,000</span><u>đ</u></span><br>
+                            <button class="addcart">Thêm vào giỏ</button>
+                        </div>
+                    </div>
+                    <!-- card 2 -->
+                    <div class="product">
+                        <!-- header product -->
+                        <i  class="far fa-heart"></i>
+                        <a href="">
+                            <img id="a2" class="img__product" src="img/cucci-sieucap.jpg" alt="">
+                        </a>
+                        <!-- infomational product -->
+                        <div class="infomation__product">
+                            <a href=""><h3 class="name__product">Gucci Rhyton Mouth</h3></a>
+                            <span><del></del><span class="price__product"> 3,300,000</span><u>đ</u></span><br>
+                            <button class="addcart" >Thêm vào giỏ</butto>
+                        </div>
+                    </div>
+                    </div>
+                   <div class="card3__card4">
+                        <!-- card 3 -->
+                    <div class="product">
+                        <!-- header product -->
+                        <i  class="far fa-heart"></i>
+                        <a href="">
+                            <img id="a3" class="img__product" src="img/yz700-v3-sieucap.jpg" alt="">
+                        </a>
+                        <!-- infomational product -->
+                        <div class="infomation__product">
+                            <a href=""><h3 class="name__product">Yeezy 700 v3 Azael</h3></a>
+                            <span><del></del><span class="price__product"> 2,000,000</span><u>đ</u></span><br>
+                            <button class="addcart">Thêm vào giỏ</button>
+                        </div>
+                    </div>
+                    <!-- card 4 -->
+                    <div class="product">
+                        <!-- header product -->
+                        <i  class="far fa-heart"></i>
+                        <a href="">
+                            <img id="a4" class="img__product" src="img/nike-af1-sieucap.jpg" alt="">
+                        </a>
+                        <!-- infomational product -->
+                        <div class="infomation__product">
+                            <a href=""><h3 class="name__product">Nike Air Force 1</h3></a>
+                            <span><del></del><span class="price__product"> 1,200,000</span><u>đ</u></span><br>
+                            <button class="addcart">Thêm vào giỏ</button>
+                        </div>
+                    </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+        <div class="footer">
+            <div class="ft__header">
+                <h2>ĐĂNG KÝ NHẬN THÔNG TIN</h2>
+                <div><input type="email" name="email-user" placeholder="abc@gmail.com"> <button>Đăng ký</button></div>
+            </div>
+            <div class="ft__content">
+                <div>
+                    <h3>THÔNG TIN LIÊN HỆ</h3>
+                    <P><i class="fas fa-map-marked-alt"></i>Tân Uyên - Lai châu - Việt Nam</P><br>
+                    <p><i class="fas fa-mobile-alt"></i>0789009862</p><br>
+                    <p><i class="fas fa-envelope-open"></i><a href="">lovanquan788@gmail.com</a></p><br>
+                    <p><i class="fab fa-skype"></i>khongchoi</p>
+                </div>
+                <div>
+                    <h3>LIÊN KẾT</h3>
+                    <p> <a href="">Giới thiệu</a></p>
+                    <p><a href="">Đồ Nam</a></p>
+                    <p><a href="">Đồ Nữ</a></p>
+                    <p><a href="">Blogs</a></p>
+                    <p><a href="">Liên hệ</a></p>
+                </div>
+                <div id="help">
+                    <h3>HỖ TRỢ</h3>
+                    <p><a href="">Hướng dẫn mua hàng</a></p>
+                   <p><a href="">Hướng dẫn thanh toán</a></p>
+                    <p><a href="">Chính sách bảo hành</a></p>
+                    <p><a href="">Chính sách đổi trả</a></p>
+                    <p><a href="">Tư vấn khách hàng</a></p>                    
+                </div>
+                <div id="app">
+                    <h3>TẢI ỨNG DỤNG</h3>
+                    <p>Ứng dụng Mona Watch hiện có<br> sẵn trên Google Play & App Store. <br> Tải nó ngay.</p>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<div class="js__content-procedure">
+    <h3 style="height: 50px;">Giới thiệu</h3>
+    <p style="height: auto;">Chào mừng bạn đến với ngôi nhà Converse! Tại đây, mỗi một dòng chữ, mỗi chi tiết và hình ảnh đều là những bằng chứng mang dấu ấn lịch sử Converse 100 năm, và đang không ngừng phát triển lớn mạnh.</p>
+    <h3 style="height: 50px; margin-top: 30px;">Sản phẩm giày tốt nhất</h3>
+    <p style="height: auto;">Chào mừng bạn đến với ngôi nhà Converse! Tại đây, mỗi một dòng chữ, mỗi chi tiết và hình ảnh đều là những bằng chứng mang dấu ấn lịch sử Converse 100 năm, và đang không ngừng phát triển lớn mạnh.</p>
+    <br>
+    <p style="height: auto; margin-top: -20px;">Chào mừng bạn đến với ngôi nhà Converse! Tại đây, mỗi một dòng chữ, mỗi chi tiết và hình ảnh đều là những bằng chứng mang dấu ấn lịch sử Converse 100 năm, và đang không ngừng phát triển lớn mạnh.</p>
+
+</div>
+    
+</body>
+<script src="main.js"></script>
+</html>
